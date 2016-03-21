@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="iv_personal_about_head_next" type="id"/>
+    <item name="iv_main_personal_about_name_next" type="id"/>
+    <item name="iv_personal_about_telephone_next" type="id"/>
+    <item name="iv_main_personal_about_sex" type="id"/>
+    <item name="iv_main_personal_safety_password" type="id" />
+
+</resources>

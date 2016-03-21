@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 皮肤颜色 -->
+    
+    <!-- 主界面下方点击色彩 -->
+    <color name="main_select">#2F4F4F</color>
+    
+    <!-- app主题颜色 -->
+    <color name="app_theme">#017c86</color>
+    
+    <!-- 默认下方文字 -->
+    <color name="main_default_str">#7597B3</color>
+    <!-- 橘黄色 -->
+    <color name="croci">#FFE4C4</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
+    <!-- 红色 -->
+    <color name="red">#FF0000</color>
+    
+    <!-- 圆型图像的颜色 -->
+    <color name="light">#FFEEEEEE</color>
+    
+    <!-- 黑色 -->
+    <color name="black">#404040</color>
+    
+    <!-- slidingmenu线条颜色 -->
+    <color name="slidingmenuline">#757575</color>
+    
+    <!-- 发心情背景色 -->
+    <color name="writemood">#E5E5E5</color>
+    
+    <color name="sc_transparent_background">#00111111</color>
+    
+    <color name="select">#8B8682</color>
+    <!-- 蓝色 -->
+    <color name="blue">#ff0000ff</color>
+    
+    <!-- 消息界面选择颜色 -->
+    <color name="message_color">#FFFFF0</color>
+    
+    <!-- 上拉刷新，下拉加载 -->
+    <!-- <color name="black">#000000</color> -->
+    <color name="pull_refresh_textview">#000000</color>
+    <color name="gold">#000000</color>
+    <color name="transparent">#00000000</color>
+    
+</resources>
