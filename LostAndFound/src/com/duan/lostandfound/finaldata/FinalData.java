@@ -9,10 +9,9 @@ public class FinalData {
 	// 请求协议
 	public static final String HTTP = "http";
 	// 请求服务器地址
-	// public static final String IP_ADDRESS = "10.100.3.17";
 	public static final String IP_ADDRESS = "192.168.16.149";// 宿舍
 	// 端口号
 	public static final int PORT = 8181;
 
-	public static final String FILE = "/LostFoundServer/";
+	public static final String FILE = "/LostFoundServer/ServletFactory";
 }

@@ -12,7 +12,7 @@ public interface HandleRequest {
 
 	public String getRequestType(); // 获取请求类型
 
-	public JSONArray getResponseContent(); // 获取请求参数
+	public JSONArray getResponseContent(); // 获取处理结果原因
 
 	public void setResponseContent(JSONArray responseContent); // 设置返回的响应数据
 }
