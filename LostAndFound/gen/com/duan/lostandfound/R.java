@@ -96,8 +96,8 @@ public final class R {
         public static final int btn_regist_next_step=0x7f06001f;
         public static final int btn_regist_set_password_submit=0x7f060018;
         public static final int btn_setting_quit=0x7f06002b;
-        public static final int et_login_account=0x7f060008;
         public static final int et_login_password=0x7f060009;
+        public static final int et_login_telephone=0x7f060008;
         public static final int et_regist_set_name=0x7f060016;
         public static final int et_regist_telephone=0x7f06001c;
         public static final int et_regist_verify_code=0x7f06001d;

@@ -1,5 +1,8 @@
 package com.duan.lostandfound.activity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.json.JSONObject;
 
 import com.duan.lostandfound.R;
@@ -16,6 +19,9 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,12 +39,12 @@ public class LoginActivity extends Activity {
 
 	private RelativeLayout RelativeLayout;
 
-	private EditText accountEditText;
+	private EditText telephoneEditText;
 	private EditText passwordEditText;
 
 	private Button loginButton;// 登录按钮
 
-	String account;// 账号
+	String telephone;// 账号
 	String password;// 密码
 
 	Users currentUsers = null; //
@@ -51,11 +57,15 @@ public class LoginActivity extends Activity {
 		initEvent();
 	}
 
+	/**
+	 * 获取控件
+	 */
 	private void initView() {
 
 		RelativeLayout = (RelativeLayout) findViewById(R.id.relative_register);
 
-		accountEditText = (EditText) findViewById(R.id.et_login_account);
+		telephoneEditText = (EditText) findViewById(R.id.et_login_telephone);
+		telephoneEditText.setInputType(InputType.TYPE_CLASS_NUMBER);// 输手机号时，使用数字键盘
 		passwordEditText = (EditText) findViewById(R.id.et_login_password);
 
 		loginButton = (Button) findViewById(R.id.btn_login);
@@ -63,6 +73,7 @@ public class LoginActivity extends Activity {
 	}
 
 	private void initEvent() {
+
 		RelativeLayout.setOnClickListener(new registTextViewOnClickListener());
 		loginButton.setOnClickListener(new loginButtonOnClickListener());
 
@@ -103,26 +114,99 @@ public class LoginActivity extends Activity {
 
 	}
 
+	/**
+	 * 验证用户名和密码是否填写
+	 * 
+	 * @return
+	 */
+	private boolean validate() {
+		telephone = telephoneEditText.getText().toString();
+		if (TextUtils.isEmpty(telephone)) {
+			Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		password = passwordEditText.getText().toString();
+		if (TextUtils.isEmpty(password)) {
+			Toast.makeText(this, "密码不能为空！", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * 手机号格式验证
+	 * 
+	 * @param mobile
+	 * @return
+	 */
+	private int telephoneFormat(String mobile) {
+
+		String line = mobile;
+		String pattern = "^((13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+
+		// 创建 Pattern 对象
+		Pattern r = Pattern.compile(pattern);
+
+		// 现在创建 matcher 对象
+		Matcher m = r.matcher(line);
+		if (m.find()) {
+			return 1;
+		} else {
+			Toast.makeText(this, "手机格式不对！", Toast.LENGTH_LONG).show();
+			return 0;
+		}
+	}
+
+	/**
+	 * 密码校验
+	 * 
+	 * @param name
+	 * @return
+	 */
+	private int passwordFormat(String name) {
+		String line = name;
+		String pattern = "^[0-9_a-zA-Z]{6,12}$";
+
+		Pattern r = Pattern.compile(pattern);// 创建 Pattern 对象
+		Matcher m = r.matcher(line);// 现在创建 matcher 对象
+
+		if (m.find()) {
+			Log.i("LOG", "验证 Yes");
+			return 1;
+		} else {
+			Toast.makeText(this, "密码只能是数字、下划线、字母，长度6-12位", Toast.LENGTH_LONG)
+					.show();
+			return 0;
+		}
+	}
+
 	private void getUserInfo() {
 		// 得到用户登录信息
-		account = accountEditText.getText().toString();
+		telephone = telephoneEditText.getText().toString();
 		password = passwordEditText.getText().toString();
+		if (validate()) {
+			if (telephoneFormat(telephone) == 1) {
+				if (passwordFormat(password) == 1) {
+					RequestParam requestParams = new RequestParam();
+					requestParams.setRequestType(RequestParam.LOGIN);
 
-		RequestParam requestParams = new RequestParam();
-		requestParams.setRequestType(RequestParam.LOGIN);
+					// 传输过去的数据
+					try {
+						JSONObject[] params = new JSONObject[1];
+						JSONObject jsonObject = new JSONObject();
+						jsonObject.put("telephone", telephone);
+						jsonObject.put("password", password);
+						params[0] = jsonObject;
+						requestParams.setParams(params);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					new GetUsersInfoAsyncTask().execute(requestParams);
+				}
 
-		// 传输过去的数据
-		try {
-			JSONObject[] params = new JSONObject[1];
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("account", account);
-			jsonObject.put("password", password);
-			params[0] = jsonObject;
-			requestParams.setParams(params);
-		} catch (Exception e) {
-			e.printStackTrace();
+			}
+
 		}
-		new GetUsersInfoAsyncTask().execute(requestParams);
 	}
 
 	public class GetUsersInfoAsyncTask extends
@@ -154,19 +238,19 @@ public class LoginActivity extends Activity {
 							+ alaysisResponse.getUsersInfo());
 			if (alaysisResponse.getUsersInfo() != null) {
 				currentUsers = alaysisResponse.getUsersInfo();
-				account = currentUsers.getName();
+				telephone = currentUsers.getName();
 				password = currentUsers.getPassword_md5();
 
 				// 登录时,将用户ID存储到共享参数中
 				SharedPreferences pref = getSharedPreferences(
 						FinalData.CONFIG_FILE_NAME, MODE_PRIVATE);
 				Editor editor = pref.edit();
-				editor.putString("account", account);
+				editor.putString("telephone", telephone);
 				editor.putString("password", password);
 
 				editor.commit(); // 提交
-				System.out.println("---Duan:account--password--->" + account
-						+ "," + password);
+				System.out.println("---Duan:telephone5--password--->"
+						+ telephone + "," + password);
 				return 0;
 			}
 
@@ -179,15 +263,17 @@ public class LoginActivity extends Activity {
 			super.onPostExecute(result);
 			switch (result) {
 			case 0:
-
 				Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_LONG)
 						.show();
+				Intent loginIntent = new Intent(LoginActivity.this,
+						MainActivity.class);
+				startActivity(loginIntent);
 				LoginActivity.this.finish();
 
 				break;
 			case -1:
-				Toast.makeText(LoginActivity.this, "登录失败！", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(LoginActivity.this, "手机号或密码错误！",
+						Toast.LENGTH_LONG).show();
 				break;
 			}
 

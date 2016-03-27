@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="libs/json-lib-2.1.jar"/>
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.7-bin.jar"/>
 	<classpathentry kind="lib" path="libs/SMSSDK-1.1.5.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

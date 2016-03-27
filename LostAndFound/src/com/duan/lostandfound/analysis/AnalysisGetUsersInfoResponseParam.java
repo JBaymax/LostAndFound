@@ -24,7 +24,7 @@ public class AnalysisGetUsersInfoResponseParam extends ResponseParam {
 			try {
 				content = super.jsonObject.getJSONArray(ResponseParam.CONTENT);
 				System.out
-						.println("----Duan:AnalysisGetUsersInfoResponseParam.conmtent--->"
+						.println("----Duan:AnalysisGetUsersInfoResponseParam.content--->"
 								+ content);
 				System.out
 						.println("----Duan:AnalysisGetUsersInfoResponseParam.telephone--->"

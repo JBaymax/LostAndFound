@@ -20,7 +20,7 @@
     <!-- 登录 界面 -->
     <string name="login_title">欢迎登录</string>
     <string name="login_register">新用户注册</string>
-    <string name="login_name_phone">请输入昵称/手机号</string>
+    <string name="login_name_phone">请输入手机号</string>
     <string name="login_password">请输入密码</string>
     <string name="login">登录</string>
     <!-- 注册界面 -->
