@@ -47,21 +47,6 @@ public class RegistPhoneActivity extends Activity implements OnClickListener {
 
 		intiView();
 		initEvent();
-
-	}
-
-	private void initEvent() {
-
-		/**
-		 * 设置控件的监听事件
-		 */
-
-		getVerifyCodeButton.setOnClickListener(this);
-		nextStepButton.setOnClickListener(this);
-		backImageView.setOnClickListener(this);
-	}
-
-	private void intiView() {
 		// 初始化验证码
 		SMSSDK.initSDK(this, APPKEY, APPSECRET);
 		EventHandler eh = new EventHandler() {
@@ -78,6 +63,20 @@ public class RegistPhoneActivity extends Activity implements OnClickListener {
 
 		};
 		SMSSDK.registerEventHandler(eh);
+	}
+
+	/**
+	 * 设置控件的监听事件
+	 */
+	private void initEvent() {
+
+		getVerifyCodeButton.setOnClickListener(this);
+		nextStepButton.setOnClickListener(this);
+		backImageView.setOnClickListener(this);
+	}
+
+	private void intiView() {
+
 		getVerifyCodeButton = (Button) findViewById(R.id.btn_regist_get_verify_code);
 		nextStepButton = (Button) findViewById(R.id.btn_regist_next_step);
 
