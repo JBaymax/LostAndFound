@@ -6,28 +6,33 @@ import com.lostfoundserver.service.UserService;
 
 import net.sf.json.JSONArray;
 
-public class Login implements HandleRequest {
-
+public class Register implements HandleRequest {
 	private JSONArray responseContent = null;// Json数组
 
 	@Override
 	public int handleRequest(JSONArray params) {
 		String telephone = params.getJSONObject(0).getString("telephone");
+		String name = params.getJSONObject(0).getString("name");
 		String password = params.getJSONObject(0).getString("password");
-		System.out.println("Login:telephone+password--->" + telephone + "," + password);
+
 		UserService userService = UserService.getInstance();
-		responseContent = userService.Login(telephone, password);
-		if (responseContent != null) {
-			return 0;
+		if (!userService.userIsExist(telephone)) {
+
+			responseContent = userService.Register(telephone, name, password);
+			if (responseContent != null) {
+				return 0;
+			} else {
+				return -1;
+			}
 		} else {
-			return -1;
+			return -2;
 		}
 	}
 
 	@Override
 	public String getRequestType() {
 		// TODO Auto-generated method stub
-		return RequestTypeCode.LOGIN;
+		return RequestTypeCode.REGISTER;
 	}
 
 	@Override
