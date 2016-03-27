@@ -10,7 +10,8 @@ public class HandleRequestFactory {
 	public static HandleRequest getInstance(String requestType) {
 		HandleRequest handleRequest = null;
 		try {
-			handleRequest = (HandleRequest) Class.forName("com.lostfoundserver.requst.handle." + requestType).newInstance();
+			handleRequest = (HandleRequest) Class.forName("com.lostfoundserver.request.handle." + requestType)
+					.newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

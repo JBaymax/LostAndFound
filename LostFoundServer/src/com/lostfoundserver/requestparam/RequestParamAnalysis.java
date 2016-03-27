@@ -17,13 +17,14 @@ public class RequestParamAnalysis {
 
 	public RequestParam analysisRequestParam(String json) {
 		JSONObject jsonObject = JSONObject.fromObject(json);
+		System.out.println("RequestParamAnalysis.json" + json);
 		requestParam.setRequestType(jsonObject.getString("requestType"));
-		
+
 		/*
 		 * JSONArray里是JSONOnject
 		 */
 		JSONArray jsonArray = jsonObject.getJSONArray("params");
-        requestParam.setParams(jsonArray);
+		requestParam.setParams(jsonArray);
 		return requestParam;
 
 	}
