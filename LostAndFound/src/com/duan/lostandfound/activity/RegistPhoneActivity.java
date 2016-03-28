@@ -1,5 +1,8 @@
 package com.duan.lostandfound.activity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.duan.lostandfound.R;
 import com.duan.lostandfound.utils.MyCountTimer;
 
@@ -136,17 +139,44 @@ public class RegistPhoneActivity extends Activity implements OnClickListener {
 		SMSSDK.unregisterAllEventHandler();
 	}
 
+	/**
+	 * 手机号格式验证
+	 * 
+	 * @param mobile
+	 * @return
+	 */
+	private int telephoneFormat(String mobile) {
+
+		String line = mobile;
+		String pattern = "^((13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+
+		// 创建 Pattern 对象
+		Pattern r = Pattern.compile(pattern);
+
+		// 现在创建 matcher 对象
+		Matcher m = r.matcher(line);
+		if (m.find()) {
+			return 1;
+		} else {
+			Toast.makeText(this, "手机格式不对！", Toast.LENGTH_LONG).show();
+			return 0;
+		}
+	}
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_regist_get_verify_code:
-			if (!TextUtils.isEmpty(telephoneEditText.getText().toString())) {
-				MyCountTimer myCountTimer = new MyCountTimer(
-						getVerifyCodeButton);// 计时器
-				myCountTimer.start();
-				SMSSDK.getVerificationCode("86", telephoneEditText.getText()
-						.toString());// 获取验证码
-				telephone = telephoneEditText.getText().toString();
+			telephone = telephoneEditText.getText().toString();
+			if (!TextUtils.isEmpty(telephone)) {
+				if (telephoneFormat(telephone) == 1) {
+					MyCountTimer myCountTimer = new MyCountTimer(
+							getVerifyCodeButton);// 计时器
+					myCountTimer.start();
+					SMSSDK.getVerificationCode("86", telephoneEditText
+							.getText().toString());// 获取验证码
+				}
+
 			} else {
 				Toast.makeText(this, "电话不能为空", Toast.LENGTH_SHORT).show();
 			}

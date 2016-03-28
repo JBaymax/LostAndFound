@@ -22,11 +22,11 @@
     <!-- 短信验证的配置信息 -->
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
-            android:name="com.duan.lostandfound.activity.LoginActivity"
+            android:name="com.duan.lostandfound.activity.WelcomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +37,7 @@
         <activity android:name="com.duan.lostandfound.activity.RegistPasswordActivity" />
         <activity android:name="com.duan.lostandfound.activity.RegistPhoneActivity" />
         <activity android:name="com.duan.lostandfound.activity.MainActivity" />
+        <activity android:name="com.duan.lostandfound.activity.LoginActivity" />
         <!-- 短信验证的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"

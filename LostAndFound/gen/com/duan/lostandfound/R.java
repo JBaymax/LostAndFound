@@ -83,11 +83,13 @@ public final class R {
         public static final int edit_login_pressed=0x7f02000b;
         public static final int head=0x7f02000c;
         public static final int ic_launcher=0x7f02000d;
-        public static final int main_bottom_tab=0x7f02000e;
-        public static final int main_bottom_tab_line=0x7f02000f;
-        public static final int next=0x7f020010;
-        public static final int regist_shape_bg=0x7f020011;
-        public static final int return_icon=0x7f020012;
+        public static final int icon=0x7f02000e;
+        public static final int main_bottom_tab=0x7f02000f;
+        public static final int main_bottom_tab_line=0x7f020010;
+        public static final int next=0x7f020011;
+        public static final int regist_shape_bg=0x7f020012;
+        public static final int return_icon=0x7f020013;
+        public static final int welcome=0x7f020014;
     }
     public static final class id {
         public static final int action_settings=0x7f06002c;
@@ -141,9 +143,10 @@ public final class R {
         public static final int activity_main=0x7f030001;
         public static final int activity_regist_name_password=0x7f030002;
         public static final int activity_regist_phone_verifycode=0x7f030003;
-        public static final int fragment_found=0x7f030004;
-        public static final int fragment_personal=0x7f030005;
-        public static final int fragmet_lost=0x7f030006;
+        public static final int activity_welcome=0x7f030004;
+        public static final int fragment_found=0x7f030005;
+        public static final int fragment_personal=0x7f030006;
+        public static final int fragmet_lost=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f090000;
