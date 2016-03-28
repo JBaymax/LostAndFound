@@ -3,13 +3,10 @@ package com.duan.lostandfound.activity;
 import com.duan.lostandfound.R;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.DisplayMetrics;
 import android.view.Window;
 
 public class WelcomeActivity extends Activity {
@@ -47,21 +44,4 @@ public class WelcomeActivity extends Activity {
 		this.finish();
 	}
 
-	/**
-	 * 获取当前状态栏的高度 getStateBar
-	 * 
-	 * @Title: getStateBar
-	 * @throws
-	 */
-	public int getStateBar() {
-		Rect frame = new Rect();
-		getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-		int statusBarHeight = frame.top;
-		return statusBarHeight;
-	}
-
-	public static int dip2px(Context context, float dipValue) {
-		float scale = context.getResources().getDisplayMetrics().density;
-		return (int) (scale * dipValue + 0.5f);
-	}
 }

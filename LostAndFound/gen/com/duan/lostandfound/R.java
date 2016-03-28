@@ -9,6 +9,86 @@ package com.duan.lostandfound;
 
 public final class R {
     public static final class attr {
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int actionSheetBackground=0x7f010001;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int actionSheetPadding=0x7f010009;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int actionSheetStyle=0x7f010000;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int actionSheetTextSize=0x7f01000c;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int cancelButtonBackground=0x7f010002;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int cancelButtonMarginTop=0x7f01000b;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int cancelButtonTextColor=0x7f010007;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int otherButtonBottomBackground=0x7f010005;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int otherButtonMiddleBackground=0x7f010004;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int otherButtonSingleBackground=0x7f010006;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int otherButtonSpacing=0x7f01000a;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int otherButtonTextColor=0x7f010008;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int otherButtonTopBackground=0x7f010003;
     }
     public static final class color {
         /**  app主题颜色 
@@ -69,27 +149,40 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int btn_add_normal=0x7f020000;
-        public static final int btn_add_pressed=0x7f020001;
-        public static final int btn_add_selector=0x7f020002;
-        public static final int btn_close_focused_shape=0x7f020003;
-        public static final int btn_close_normal_shape=0x7f020004;
-        public static final int btn_quit_red_bg=0x7f020005;
-        public static final int btn_shape_focused=0x7f020006;
-        public static final int btn_shape_normal=0x7f020007;
-        public static final int btn_shape_red_big_bg=0x7f020008;
-        public static final int edit_login=0x7f020009;
-        public static final int edit_login_normal=0x7f02000a;
-        public static final int edit_login_pressed=0x7f02000b;
-        public static final int head=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int icon=0x7f02000e;
-        public static final int main_bottom_tab=0x7f02000f;
-        public static final int main_bottom_tab_line=0x7f020010;
-        public static final int next=0x7f020011;
-        public static final int regist_shape_bg=0x7f020012;
-        public static final int return_icon=0x7f020013;
-        public static final int welcome=0x7f020014;
+        public static final int actionsheet_bottom_normal=0x7f020000;
+        public static final int actionsheet_bottom_pressed=0x7f020001;
+        public static final int actionsheet_middle_normal=0x7f020002;
+        public static final int actionsheet_middle_pressed=0x7f020003;
+        public static final int actionsheet_single_normal=0x7f020004;
+        public static final int actionsheet_single_pressed=0x7f020005;
+        public static final int actionsheet_slt_as_ios7_cancel_bt=0x7f020006;
+        public static final int actionsheet_slt_as_ios7_other_bt_bottom=0x7f020007;
+        public static final int actionsheet_slt_as_ios7_other_bt_middle=0x7f020008;
+        public static final int actionsheet_slt_as_ios7_other_bt_single=0x7f020009;
+        public static final int actionsheet_slt_as_ios7_other_bt_top=0x7f02000a;
+        public static final int actionsheet_top_normal=0x7f02000b;
+        public static final int actionsheet_top_pressed=0x7f02000c;
+        public static final int btn_add_normal=0x7f02000d;
+        public static final int btn_add_pressed=0x7f02000e;
+        public static final int btn_add_selector=0x7f02000f;
+        public static final int btn_close_focused_shape=0x7f020010;
+        public static final int btn_close_normal_shape=0x7f020011;
+        public static final int btn_quit_red_bg=0x7f020012;
+        public static final int btn_shape_focused=0x7f020013;
+        public static final int btn_shape_normal=0x7f020014;
+        public static final int btn_shape_red_big_bg=0x7f020015;
+        public static final int edit_login=0x7f020016;
+        public static final int edit_login_normal=0x7f020017;
+        public static final int edit_login_pressed=0x7f020018;
+        public static final int head=0x7f020019;
+        public static final int ic_launcher=0x7f02001a;
+        public static final int icon=0x7f02001b;
+        public static final int main_bottom_tab=0x7f02001c;
+        public static final int main_bottom_tab_line=0x7f02001d;
+        public static final int next=0x7f02001e;
+        public static final int regist_shape_bg=0x7f02001f;
+        public static final int return_icon=0x7f020020;
+        public static final int welcome=0x7f020021;
     }
     public static final class id {
         public static final int action_settings=0x7f06002c;
@@ -191,6 +284,7 @@ public final class R {
         public static final int regist_verify_code=0x7f070017;
     }
     public static final class style {
+        public static final int ActionSheetStyle=0x7f080002;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -218,4 +312,214 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a ActionSheet.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ActionSheet_actionSheetBackground com.duan.lostandfound:actionSheetBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_actionSheetPadding com.duan.lostandfound:actionSheetPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_actionSheetTextSize com.duan.lostandfound:actionSheetTextSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_cancelButtonBackground com.duan.lostandfound:cancelButtonBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_cancelButtonMarginTop com.duan.lostandfound:cancelButtonMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_cancelButtonTextColor com.duan.lostandfound:cancelButtonTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonBottomBackground com.duan.lostandfound:otherButtonBottomBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonMiddleBackground com.duan.lostandfound:otherButtonMiddleBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonSingleBackground com.duan.lostandfound:otherButtonSingleBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonSpacing com.duan.lostandfound:otherButtonSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonTextColor com.duan.lostandfound:otherButtonTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionSheet_otherButtonTopBackground com.duan.lostandfound:otherButtonTopBackground}</code></td><td></td></tr>
+           </table>
+           @see #ActionSheet_actionSheetBackground
+           @see #ActionSheet_actionSheetPadding
+           @see #ActionSheet_actionSheetTextSize
+           @see #ActionSheet_cancelButtonBackground
+           @see #ActionSheet_cancelButtonMarginTop
+           @see #ActionSheet_cancelButtonTextColor
+           @see #ActionSheet_otherButtonBottomBackground
+           @see #ActionSheet_otherButtonMiddleBackground
+           @see #ActionSheet_otherButtonSingleBackground
+           @see #ActionSheet_otherButtonSpacing
+           @see #ActionSheet_otherButtonTextColor
+           @see #ActionSheet_otherButtonTopBackground
+         */
+        public static final int[] ActionSheet = {
+            0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004,
+            0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008,
+            0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#actionSheetBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:actionSheetBackground
+        */
+        public static final int ActionSheet_actionSheetBackground = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#actionSheetPadding}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.duan.lostandfound:actionSheetPadding
+        */
+        public static final int ActionSheet_actionSheetPadding = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#actionSheetTextSize}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.duan.lostandfound:actionSheetTextSize
+        */
+        public static final int ActionSheet_actionSheetTextSize = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#cancelButtonBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:cancelButtonBackground
+        */
+        public static final int ActionSheet_cancelButtonBackground = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#cancelButtonMarginTop}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.duan.lostandfound:cancelButtonMarginTop
+        */
+        public static final int ActionSheet_cancelButtonMarginTop = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#cancelButtonTextColor}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:cancelButtonTextColor
+        */
+        public static final int ActionSheet_cancelButtonTextColor = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonBottomBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:otherButtonBottomBackground
+        */
+        public static final int ActionSheet_otherButtonBottomBackground = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonMiddleBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:otherButtonMiddleBackground
+        */
+        public static final int ActionSheet_otherButtonMiddleBackground = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonSingleBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:otherButtonSingleBackground
+        */
+        public static final int ActionSheet_otherButtonSingleBackground = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonSpacing}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.duan.lostandfound:otherButtonSpacing
+        */
+        public static final int ActionSheet_otherButtonSpacing = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonTextColor}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:otherButtonTextColor
+        */
+        public static final int ActionSheet_otherButtonTextColor = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#otherButtonTopBackground}
+          attribute's value can be found in the {@link #ActionSheet} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.duan.lostandfound:otherButtonTopBackground
+        */
+        public static final int ActionSheet_otherButtonTopBackground = 2;
+        /** Attributes that can be used with a ActionSheets.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ActionSheets_actionSheetStyle com.duan.lostandfound:actionSheetStyle}</code></td><td></td></tr>
+           </table>
+           @see #ActionSheets_actionSheetStyle
+         */
+        public static final int[] ActionSheets = {
+            0x7f010000
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.duan.lostandfound.R.attr#actionSheetStyle}
+          attribute's value can be found in the {@link #ActionSheets} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.duan.lostandfound:actionSheetStyle
+        */
+        public static final int ActionSheets_actionSheetStyle = 0;
+    };
 }
