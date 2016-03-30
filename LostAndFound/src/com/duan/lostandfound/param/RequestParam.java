@@ -8,7 +8,7 @@ import android.util.Log;
 /**
  * 请求服务器的参数
  * 
- * @author King
+ * @author Administrator
  * 
  */
 public class RequestParam {
@@ -16,13 +16,14 @@ public class RequestParam {
 	// 请求操作类型
 
 	public static final String LOGIN = "Login"; // 获取登录请求
+
 	public static final String REGISTER = "Register"; // 获取注册请求
 
 	// 请求参数名
 	public static final String TELEPHONE = "telephone";
 	public static final String TOKEN = "token";
-	public static final String REQUEST_TYPE = "requestType";// 请求类型
-	public static final String PARAMS = "params";// 请求参数
+	public static final String REQUEST_TYPE = "requestType";
+	public static final String PARAMS = "params";
 
 	public static final String STATUS = "loginStatus";
 

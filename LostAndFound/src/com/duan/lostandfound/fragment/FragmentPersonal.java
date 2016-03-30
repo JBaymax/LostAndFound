@@ -7,6 +7,7 @@ import com.duan.lostandfound.utils.ActionSheet.MenuItemClickListener;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -126,21 +127,18 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 	 * 退出的方法
 	 */
 	public void quit() {
-		// 先读取共享参数
-		SharedPreferences preferences = getActivity().getSharedPreferences(
-				FinalData.CONFIG_FILE_NAME, Activity.MODE_PRIVATE);
-		telephone = preferences.getString("telephone", "0");
-		password = preferences.getString("password", "0");
-		// 判断telephone和password是否为空
-		if ((!telephone.equals("0")) && (!password.equals("0"))) {
-			// 如果不为空，将数据清零
-			SharedPreferences sharedPreferences = getActivity()
-					.getSharedPreferences("myPref", Context.MODE_PRIVATE);
-			Editor editor = sharedPreferences.edit();// 获取编辑器
-			editor.putString("telephone", "0");
-			editor.putString("password", "0");
-			editor.commit();// 提交修改;
-		}
+		SharedPreferences sharedPreferences = getActivity()
+				.getSharedPreferences(FinalData.CONFIG_FILE_NAME,
+						Context.MODE_PRIVATE);
+		Editor editor = sharedPreferences.edit();// 获取编辑器
+		editor.putString("telephone", "0");
+		editor.putString("password", "0");
+		editor.commit();// 提交修改;
 		getActivity().finish();
+		Intent startMain = new Intent(Intent.ACTION_MAIN);
+		startMain.addCategory(Intent.CATEGORY_HOME);
+		startMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(startMain);
+		System.exit(0);
 	}
 }

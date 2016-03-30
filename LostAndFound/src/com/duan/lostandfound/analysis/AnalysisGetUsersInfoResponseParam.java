@@ -6,7 +6,6 @@ import org.json.JSONObject;
 
 import com.duan.lostandfound.dto.Users;
 import com.duan.lostandfound.param.ResponseParam;
-import com.duan.lostandfound.utils.Encrypt;
 
 /**
  * 解析用户相应参数
@@ -63,12 +62,11 @@ public class AnalysisGetUsersInfoResponseParam extends ResponseParam {
 				users.setId(jsonObject.getInt(Users.ID));
 				users.setName(jsonObject.getString(Users.NAME));
 				users.setTelephone(jsonObject.getString(Users.TELEPHONE));
-				users.setPassword_md5((Encrypt.md5Encrypt(jsonObject
-						.getString(Users.PASSWORD_MD5))));
+				users.setPassword((jsonObject.getString(Users.PASSWORD)));
 
 				System.out
 						.println("----Duan:getUsersInfo.content.jsonObject.getInt(Users.ID)--->"
-								+ jsonObject.getString(Users.PASSWORD_MD5));
+								+ jsonObject.getString(Users.PASSWORD));
 
 			}
 

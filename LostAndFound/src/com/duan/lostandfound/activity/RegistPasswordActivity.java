@@ -1,5 +1,8 @@
 package com.duan.lostandfound.activity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.json.JSONObject;
 
 import com.duan.lostandfound.R;
@@ -13,6 +16,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -57,8 +61,6 @@ public class RegistPasswordActivity extends Activity implements OnClickListener 
 		submitButton = (Button) findViewById(R.id.btn_regist_set_password_submit);
 		nameEditText = (EditText) findViewById(R.id.et_regist_set_name);
 		passwordEditText = (EditText) findViewById(R.id.et_set_password);
-		name = nameEditText.getText().toString();
-		password = passwordEditText.getText().toString();
 
 	}
 
@@ -69,30 +71,104 @@ public class RegistPasswordActivity extends Activity implements OnClickListener 
 	}
 
 	/**
+	 * 验证用户名和密码是否填写
+	 * 
+	 * @return
+	 */
+	private boolean validate() {
+		name = nameEditText.getText().toString();
+		if (TextUtils.isEmpty(name)) {
+			Toast.makeText(this, "昵称不能为空！", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		password = passwordEditText.getText().toString();
+		if (TextUtils.isEmpty(password)) {
+			Toast.makeText(this, "密码不能为空！", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * 验证码校验
+	 * 
+	 * @param name
+	 * @return
+	 */
+	private int nickNameFormat(String name) {
+		String line = name;
+		String pattern = "^.{2,6}$";
+
+		Pattern r = Pattern.compile(pattern);// 创建 Pattern 对象
+		Matcher m = r.matcher(line);// 现在创建 matcher 对象
+
+		if (m.find()) {
+			Log.i("LOG", "验证 Yes");
+			return 1;
+		} else {
+			Log.i("LOG", "验证  No");
+			return 0;
+		}
+	}
+
+	/**
+	 * 密码校验
+	 * 
+	 * @param name
+	 * @return
+	 */
+	private int passwordFormat(String name) {
+		String line = name;
+		String pattern = "^[0-9_a-zA-Z]{6,12}$";
+
+		Pattern r = Pattern.compile(pattern);// 创建 Pattern 对象
+		Matcher m = r.matcher(line);// 现在创建 matcher 对象
+
+		if (m.find()) {
+			Log.i("LOG", "验证 Yes");
+			return 1;
+		} else {
+			Log.i("LOG", "验证  No");
+			return 0;
+		}
+	}
+
+	/**
 	 * 实现注册功能
 	 */
 	private void regist() {
 
 		System.out.println("regist.password--!isEmpty" + password);
+		if (validate()) {
+			if (nickNameFormat(name) == 1) {
+				if (passwordFormat(password) == 1) {
+					RequestParam requestParams = new RequestParam();
+					requestParams.setRequestType(RequestParam.REGISTER);// 设置请求类型
 
-		RequestParam requestParams = new RequestParam();
-		requestParams.setRequestType(RequestParam.REGISTER);// 设置请求类型
+					try {
 
-		try {
+						JSONObject[] params = new JSONObject[1];
+						JSONObject jsonObject = new JSONObject();
+						jsonObject.put("name", name);
+						jsonObject.put("telephone", telephone);
+						jsonObject.put("password", password);
+						params[0] = jsonObject;
+						requestParams.setParams(params);// 设置请求参数
 
-			JSONObject[] params = new JSONObject[1];
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("name", name);
-			jsonObject.put("telephone", telephone);
-			jsonObject.put("password", password);
-			params[0] = jsonObject;
-			requestParams.setParams(params);// 设置请求参数
-
-		} catch (Exception e) {
-			e.printStackTrace();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					new GetRegistInfoAsyncTask().execute(requestParams);
+				} else {
+					Toast.makeText(RegistPasswordActivity.this,
+							"密码只能是数字、下划线、字母，长度6-12位", Toast.LENGTH_SHORT)
+							.show();
+				}
+			} else {
+				Toast.makeText(RegistPasswordActivity.this, "昵称长度为2-6位",
+						Toast.LENGTH_SHORT).show();
+			}
 		}
-		new GetRegistInfoAsyncTask().execute(requestParams);
-
 	}
 
 	public class GetRegistInfoAsyncTask extends
@@ -152,16 +228,10 @@ public class RegistPasswordActivity extends Activity implements OnClickListener 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btn_regist_next_step:
-			// 假如password控件不为空
-			if (!TextUtils.isEmpty(password)) {
-				System.out.println("password--!isEmpty" + password);
-				regist();
-			} else {
-				System.out.println("password--isEmpty" + password);
-				Toast.makeText(RegistPasswordActivity.this, "密码不能为空",
-						Toast.LENGTH_LONG).show();
-			}
+		case R.id.btn_regist_set_password_submit:
+
+			regist();
+
 			break;
 
 		case R.id.iv_regist_name_title_back:
