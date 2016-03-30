@@ -46,6 +46,9 @@ public class LoginActivity extends Activity {
 
 	String telephone;// 账号
 	String password;// 密码
+
+	String usertelephone;// 账号
+	String userpassword;// 密码
 	String username;// 用户昵称
 	String usersex;// 用户性别
 	int userid;
@@ -125,7 +128,7 @@ public class LoginActivity extends Activity {
 	private boolean validate() {
 		telephone = telephoneEditText.getText().toString();
 		if (TextUtils.isEmpty(telephone)) {
-			Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "手机不能为空！", Toast.LENGTH_LONG).show();
 			return false;
 		}
 		password = passwordEditText.getText().toString();
@@ -199,6 +202,8 @@ public class LoginActivity extends Activity {
 						JSONObject jsonObject = new JSONObject();
 						jsonObject.put("telephone", telephone);
 						jsonObject.put("password", password);
+						// jsonObject.put("password",
+						// Encrypt.md5Encrypt(password));
 						params[0] = jsonObject;
 						requestParams.setParams(params);
 					} catch (Exception e) {
@@ -231,6 +236,9 @@ public class LoginActivity extends Activity {
 			System.out
 					.println("----Duan:GetUsersInfoAsyncTask.doInBackground.response--->"
 							+ response);
+			System.out
+					.println("----Duan:GetUsersInfoAsyncTask.doInBackground.response2--->"
+							+ Request.request(requestParams.getJSON()));
 			AnalysisGetUsersInfoResponseParam alaysisResponse = new AnalysisGetUsersInfoResponseParam(
 					response);
 			if (alaysisResponse.getResult() != 0) {
@@ -241,10 +249,10 @@ public class LoginActivity extends Activity {
 							+ alaysisResponse.getUsersInfo());
 			if (alaysisResponse.getUsersInfo() != null) {
 				currentUsers = alaysisResponse.getUsersInfo();
-				telephone = currentUsers.getTelephone();
-				password = currentUsers.getPassword_md5();
+				usertelephone = currentUsers.getTelephone();
+				userpassword = currentUsers.getPassword();
 				username = currentUsers.getName();
-				usersex = currentUsers.getSex();
+				// usersex = currentUsers.getSex();
 
 				// 登录时,将用户ID存储到共享参数中
 				SharedPreferences pref = getSharedPreferences(
@@ -254,10 +262,10 @@ public class LoginActivity extends Activity {
 				editor.putString("telephone", telephone);
 				editor.putString("password", password);
 				editor.putString("name", username);
-				editor.putString("sex", usersex);
+				// editor.putString("sex", usersex);
 
 				editor.commit(); // 提交
-				System.out.println("---Duan:telephone5--password--->"
+				System.out.println("---Duan:telephone--password--->"
 						+ telephone + "," + password);
 				return 0;
 			}

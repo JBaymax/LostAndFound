@@ -4,14 +4,14 @@ public class Users {
 	public static final String ID = "user_id"; // int(11)
 	public static final String NAME = "user_name"; // varchar(20) 用户名
 	public static final String TELEPHONE = "user_telephone"; // varchar(11) 电话
-	public static final String PASSWORD_MD5 = "user_password"; // varchar(20) 密码
+	public static final String PASSWORD = "user_password"; // varchar(20) 密码
 	public static final String SEX = "user_sex";// char(4) 性别
 	public static final String HEAD_IMAGE = "user_head_image"; // varchar(100)
 																// 头像
 	int id; // int(11)
 	String name;// varchar(20) 用户名
 	String telephone;// varchar(20) 电话
-	String password_md5;// varchar(20) 密码
+	String password;// varchar(20) 密码
 	String headImage;// varchar(100) 头像
 	String sex;// char(4) 性别
 
@@ -39,12 +39,12 @@ public class Users {
 		this.telephone = telephone;
 	}
 
-	public String getPassword_md5() {
-		return password_md5;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPassword_md5(String password_md5) {
-		this.password_md5 = password_md5;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getHeadImage() {

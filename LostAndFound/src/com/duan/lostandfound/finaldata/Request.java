@@ -39,8 +39,8 @@ public class Request {
 			URL url = new URL(FinalData.HTTP, FinalData.IP_ADDRESS,
 					FinalData.PORT, FinalData.FILE);
 
-			System.out.println("---Daun:Request.url--->" + url);
-
+			System.out.println("---Duan:Request.url--->" + url);
+			
 			response = HttpClient.connect(url, HttpClient.HTTP_POST,
 					"requestParam=" + URLEncoder.encode(json, "utf-8"),
 					Request.CONNECTTIMEOUT, Request.READTIMEOUT);
