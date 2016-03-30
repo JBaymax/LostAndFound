@@ -64,10 +64,6 @@ public class AnalysisGetUsersInfoResponseParam extends ResponseParam {
 				users.setTelephone(jsonObject.getString(Users.TELEPHONE));
 				users.setPassword((jsonObject.getString(Users.PASSWORD)));
 
-				System.out
-						.println("----Duan:getUsersInfo.content.jsonObject.getInt(Users.ID)--->"
-								+ jsonObject.getString(Users.ID));
-
 			}
 
 		} catch (Exception e) {

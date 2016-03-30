@@ -248,9 +248,6 @@ public class LoginActivity extends Activity {
 			if (alaysisResponse.getUsersInfo() != null) {
 				currentUsers = alaysisResponse.getUsersInfo();
 				username = currentUsers.getName();
-				userid = currentUsers.getId();
-				System.out.println("Duan:返回的值userid-username--->" + userid
-						+ "," + username);
 				// usersex = currentUsers.getSex();
 
 				// 登录时,将用户ID存储到共享参数中
