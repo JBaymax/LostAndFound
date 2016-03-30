@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2016-03-30 17:50:47
+Date: 2016-03-30 23:28:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -83,5 +83,5 @@ CREATE TABLE `tb_user` (
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES ('1', '幻雪', '4QrcOUm6Wau+VuBX8g+IPg==', '18365265052', null, null);
-INSERT INTO `tb_user` VALUES ('2', '你好', 'wzNncBURtPYCDsYd7TUgWQ==', '18365265051', null, null);
+INSERT INTO `tb_user` VALUES ('1', '哈哈', '4QrcOUm6Wau+VuBX8g+IPg==', '18365265051', null, null);
+INSERT INTO `tb_user` VALUES ('2', '嘿嘿', 'wzNncBURtPYCDsYd7TUgWQ==', '18365265053', null, null);

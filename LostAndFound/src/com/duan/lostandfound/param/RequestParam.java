@@ -20,6 +20,10 @@ public class RequestParam {
 	public static final String REGISTER = "Register"; // 获取注册请求
 
 	public static final String MODIFYNAME = "ModifyName"; // 修改昵称的请求
+
+	public static final String MODIFYTELEPHONE = "ModifyTelephone"; // 修改昵称的请求
+	
+	public static final String MODIFYPASSWORD = "ModifyPassword"; // 修改昵称的请求
 	// 请求参数名
 	public static final String TELEPHONE = "telephone";
 	public static final String TOKEN = "token";

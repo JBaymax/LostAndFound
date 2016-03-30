@@ -11,9 +11,12 @@ import com.duan.lostandfound.dto.Users;
 import com.duan.lostandfound.finaldata.FinalData;
 import com.duan.lostandfound.finaldata.HttpClient;
 import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.fragment.FragmentPersonal;
 import com.duan.lostandfound.param.RequestParam;
+import com.duan.lostandfound.utils.IntentCode;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
@@ -92,8 +95,6 @@ public class ModifyNameActivity extends Activity implements OnClickListener {
 					JSONObject jsonObject = new JSONObject();
 					jsonObject.put("id", userId);
 					jsonObject.put("name", content);
-					// jsonObject.put("password",
-					// Encrypt.md5Encrypt(password));
 					params[0] = jsonObject;
 					requestParams.setParams(params);
 				} catch (Exception e) {
@@ -148,7 +149,7 @@ public class ModifyNameActivity extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * 改变密码的异步通信任务
+	 * 改变昵称的异步通信任务
 	 */
 	public class ModifyNameMyAsyncTask extends
 			AsyncTask<RequestParam, Integer, Integer> {
@@ -198,6 +199,12 @@ public class ModifyNameActivity extends Activity implements OnClickListener {
 			case 0:
 				Toast.makeText(ModifyNameActivity.this, "修改成功！",
 						Toast.LENGTH_LONG).show();
+
+				Intent intent = new Intent(ModifyNameActivity.this,
+						FragmentPersonal.class);
+				// 得到相应位置的textView的值
+				intent.putExtra("name", content);
+				setResult(IntentCode.MODIFY_NAME_INTENT_RESULT, intent);
 				ModifyNameActivity.this.finish();
 
 				break;

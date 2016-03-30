@@ -39,6 +39,8 @@
         <activity android:name="com.duan.lostandfound.activity.MainActivity" />
         <activity android:name="com.duan.lostandfound.activity.LoginActivity" />
         <activity android:name="com.duan.lostandfound.activity.ModifyNameActivity" />
+        <activity android:name="com.duan.lostandfound.activity.ModifyTelephoneActivity" />
+        <activity android:name="com.duan.lostandfound.activity.ModifyPasswordActivity" />
         <!-- 短信验证的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"

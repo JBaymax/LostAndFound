@@ -84,11 +84,11 @@ public class UserDAO extends BaseDAO {
 	 */
 	public boolean update(int userid, String updateName, String updateValue) {
 		boolean result = false;
-		User user = null;
 		PreparedStatement ps = null;
 		try {
-			ps = conn.prepareStatement("UPDATE tb_user SET user_name=?  where user_id= ?");
-
+			ps = conn.prepareStatement("update tb_user set " + updateName + "=?" + " where user_id=?");
+			System.out.println("Duan:更新时的SQL语句--->" + "update users set " + updateName + "=" + updateValue
+					+ " where user_id=" + userid);
 			ps.setString(1, updateValue);
 			ps.setInt(2, userid);
 
