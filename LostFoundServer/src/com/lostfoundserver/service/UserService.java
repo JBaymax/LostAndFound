@@ -83,6 +83,32 @@ public class UserService {
 	}
 
 	/**
+	 * 昵称
+	 * 
+	 * @param telephone
+	 * @param password
+	 * @return
+	 */
+	public JSONArray update(int id, String updateName, String updateValue) {
+		Connection conn = DatabaseManager.getInstance().getConnection();
+		userDAO.setConnection(conn);
+
+		JSONArray result = null;
+		try {
+			boolean update = userDAO.update(id, updateName, updateValue);
+			System.out.println("update--->" + update);
+			if (update) {
+				result = new JSONArray();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DatabaseManager.CloseConnection(conn);
+		}
+		return result;
+	}
+
+	/**
 	 * 判断用户是否存在
 	 * 
 	 * @param telephone

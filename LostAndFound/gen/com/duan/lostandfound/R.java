@@ -185,28 +185,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int welcome=0x7f020021;
     }
     public static final class id {
-        public static final int action_settings=0x7f06002c;
+        public static final int action_settings=0x7f060030;
         public static final int btn_login=0x7f06000a;
-        public static final int btn_regist_get_verify_code=0x7f06001e;
-        public static final int btn_regist_next_step=0x7f06001f;
-        public static final int btn_regist_set_password_submit=0x7f060018;
-        public static final int btn_setting_quit=0x7f06002b;
+        public static final int btn_modify_submit=0x7f060018;
+        public static final int btn_regist_get_verify_code=0x7f060022;
+        public static final int btn_regist_next_step=0x7f060023;
+        public static final int btn_regist_set_password_submit=0x7f06001c;
+        public static final int btn_setting_quit=0x7f06002f;
         public static final int et_login_password=0x7f060009;
         public static final int et_login_telephone=0x7f060008;
-        public static final int et_regist_set_name=0x7f060016;
-        public static final int et_regist_telephone=0x7f06001c;
-        public static final int et_regist_verify_code=0x7f06001d;
-        public static final int et_set_password=0x7f060017;
+        public static final int et_modify_content=0x7f060017;
+        public static final int et_regist_set_name=0x7f06001a;
+        public static final int et_regist_telephone=0x7f060020;
+        public static final int et_regist_verify_code=0x7f060021;
+        public static final int et_set_password=0x7f06001b;
         public static final int iv_main_add_selector=0x7f06000f;
         public static final int iv_main_personal_about_name_next=0x7f060001;
         public static final int iv_main_personal_about_sex=0x7f060003;
         public static final int iv_main_personal_safety_password=0x7f060004;
-        public static final int iv_personal_about_head=0x7f060022;
+        public static final int iv_modify_back=0x7f060015;
+        public static final int iv_personal_about_head=0x7f060026;
         public static final int iv_personal_about_head_next=0x7f060000;
         public static final int iv_personal_about_telephone_next=0x7f060002;
-        public static final int iv_regist_name_title_back=0x7f060015;
-        public static final int iv_regist_title_back=0x7f060019;
-        public static final int linear_register=0x7f06001b;
+        public static final int iv_regist_name_title_back=0x7f060019;
+        public static final int iv_regist_title_back=0x7f06001d;
+        public static final int linear_register=0x7f06001f;
         public static final int login_titlebar=0x7f060005;
         public static final int lost_found_main_titlebar=0x7f06000c;
         public static final int pager=0x7f060010;
@@ -214,32 +217,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int radio1=0x7f060013;
         public static final int radio2=0x7f060014;
         public static final int radioGroup1=0x7f060011;
-        public static final int relative_personal_about_head=0x7f060020;
-        public static final int relative_personal_about_name=0x7f060023;
-        public static final int relative_personal_about_sex=0x7f060027;
-        public static final int relative_personal_about_telephone=0x7f060025;
-        public static final int relative_personal_safety_password=0x7f060029;
+        public static final int relative_personal_about_head=0x7f060024;
+        public static final int relative_personal_about_name=0x7f060027;
+        public static final int relative_personal_about_sex=0x7f06002b;
+        public static final int relative_personal_about_telephone=0x7f060029;
+        public static final int relative_personal_safety_password=0x7f06002d;
         public static final int relative_register=0x7f060007;
         public static final int relativelayout_fristRadioGroup_back=0x7f06000e;
-        public static final int tv_about_industry=0x7f060028;
+        public static final int tv_about_industry=0x7f06002c;
         public static final int tv_login_title=0x7f060006;
-        public static final int tv_main_personal_about_name=0x7f060024;
+        public static final int tv_main_personal_about_name=0x7f060028;
         public static final int tv_main_title=0x7f06000d;
-        public static final int tv_personal_about_head=0x7f060021;
-        public static final int tv_personal_about_telephone=0x7f060026;
+        public static final int tv_modify_title=0x7f060016;
+        public static final int tv_personal_about_head=0x7f060025;
+        public static final int tv_personal_about_telephone=0x7f06002a;
         public static final int tv_regist=0x7f06000b;
-        public static final int tv_safety_password=0x7f06002a;
-        public static final int tv_show_register_info=0x7f06001a;
+        public static final int tv_safety_password=0x7f06002e;
+        public static final int tv_show_register_info=0x7f06001e;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_regist_name_password=0x7f030002;
-        public static final int activity_regist_phone_verifycode=0x7f030003;
-        public static final int activity_welcome=0x7f030004;
-        public static final int fragment_found=0x7f030005;
-        public static final int fragment_personal=0x7f030006;
-        public static final int fragmet_lost=0x7f030007;
+        public static final int activity_modify=0x7f030002;
+        public static final int activity_regist_name_password=0x7f030003;
+        public static final int activity_regist_phone_verifycode=0x7f030004;
+        public static final int activity_welcome=0x7f030005;
+        public static final int fragment_found=0x7f030006;
+        public static final int fragment_personal=0x7f030007;
+        public static final int fragmet_lost=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -269,6 +274,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main_personal_quit_account=0x7f07000e;
         public static final int main_personal_safety_info=0x7f07000a;
         public static final int main_personal_safety_password=0x7f07000c;
+        /**  个人信息修改 
+         */
+        public static final int modify_submit=0x7f07001f;
         public static final int next_step=0x7f070019;
         public static final int regist_get_verify_code=0x7f070018;
         public static final int regist_info=0x7f070015;

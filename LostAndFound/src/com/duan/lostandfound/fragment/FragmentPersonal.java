@@ -1,12 +1,14 @@
 package com.duan.lostandfound.fragment;
 
 import com.duan.lostandfound.R;
+import com.duan.lostandfound.activity.ModifyNameActivity;
 import com.duan.lostandfound.finaldata.FinalData;
 import com.duan.lostandfound.utils.ActionSheet;
 import com.duan.lostandfound.utils.ActionSheet.MenuItemClickListener;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -94,7 +96,10 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 			break;
 		case R.id.relative_personal_about_name:
-
+			Intent nameIntent = new Intent(getActivity(),
+					ModifyNameActivity.class);
+			startActivity(nameIntent);
+			getActivity().finish();
 			break;
 		case R.id.relative_personal_about_telephone:
 			Toast.makeText(getActivity(), "电话被点击", Toast.LENGTH_LONG).show();
@@ -108,7 +113,8 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 			break;
 		case R.id.btn_setting_quit:
-			quit();
+			// 弹出提示框，确定退出
+			showDialog();
 			break;
 		default:
 			break;
@@ -121,6 +127,29 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 		Toast.makeText(getActivity(), (itemPosition + 1) + " click", 0).show();
 
+	}
+
+	private void showDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setMessage("是否确定退出？");
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				// 实现退出
+				quit();
+			}
+
+		});
+		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 
 	/**

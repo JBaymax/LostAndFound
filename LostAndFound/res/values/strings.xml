@@ -35,5 +35,7 @@
     <string name="regist_set_name_info">建议填写你的真实姓名，失主与您联系!此昵称可在个人信息进行修改。</string>
     <string name="regist_set_password">请输入密码</string>
     <string name="regist_set_submit">提交</string>
+    <!-- 个人信息修改 -->
+    <string name="modify_submit">提交</string>
 
 </resources>

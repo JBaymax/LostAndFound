@@ -9,4 +9,5 @@ package com.lostfoundserver.request;
 public class RequestTypeCode {
 	public static final String REGISTER = "Register"; // 用户注册
 	public static final String LOGIN = "Login"; // 用户登录
+	public static final String MODIFYNAME = "ModifyName"; // 修改昵称
 }

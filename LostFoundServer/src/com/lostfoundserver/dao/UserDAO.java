@@ -78,4 +78,37 @@ public class UserDAO extends BaseDAO {
 		}
 		return user;
 	}
+
+	/**
+	 * 更新昵称
+	 */
+	public boolean update(int userid, String updateName, String updateValue) {
+		boolean result = false;
+		User user = null;
+		PreparedStatement ps = null;
+		try {
+			ps = conn.prepareStatement("UPDATE tb_user SET user_name=?  where user_id= ?");
+
+			ps.setString(1, updateValue);
+			ps.setInt(2, userid);
+
+			int updateResult = ps.executeUpdate();
+
+			// 判断是否更新成功
+			if (updateResult > 0) {
+				result = true;
+
+			} else {
+
+				result = false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeStatement(ps);
+		}
+		return result;
+
+	}
 }

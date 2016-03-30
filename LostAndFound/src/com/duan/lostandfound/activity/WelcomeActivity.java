@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
 import android.view.Window;
 
 public class WelcomeActivity extends Activity {
@@ -50,7 +49,6 @@ public class WelcomeActivity extends Activity {
 				FinalData.CONFIG_FILE_NAME, Activity.MODE_PRIVATE);
 		telephone = preferences.getString("telephone", "0");
 		password = preferences.getString("password", "0");
-
 		if ((!telephone.equals("0")) && (!password.equals("0"))) {
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);

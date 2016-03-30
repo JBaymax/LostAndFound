@@ -66,7 +66,7 @@ public class AnalysisGetUsersInfoResponseParam extends ResponseParam {
 
 				System.out
 						.println("----Duan:getUsersInfo.content.jsonObject.getInt(Users.ID)--->"
-								+ jsonObject.getString(Users.PASSWORD));
+								+ jsonObject.getString(Users.ID));
 
 			}
 

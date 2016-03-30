@@ -47,8 +47,6 @@ public class LoginActivity extends Activity {
 	String telephone;// 账号
 	String password;// 密码
 
-	String usertelephone;// 账号
-	String userpassword;// 密码
 	String username;// 用户昵称
 	String usersex;// 用户性别
 	int userid;
@@ -249,9 +247,10 @@ public class LoginActivity extends Activity {
 							+ alaysisResponse.getUsersInfo());
 			if (alaysisResponse.getUsersInfo() != null) {
 				currentUsers = alaysisResponse.getUsersInfo();
-				usertelephone = currentUsers.getTelephone();
-				userpassword = currentUsers.getPassword();
 				username = currentUsers.getName();
+				userid = currentUsers.getId();
+				System.out.println("Duan:返回的值userid-username--->" + userid
+						+ "," + username);
 				// usersex = currentUsers.getSex();
 
 				// 登录时,将用户ID存储到共享参数中

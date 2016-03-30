@@ -1,13 +1,14 @@
 package com.duan.lostandfound.dto;
 
 public class Users {
-	public static final String ID = "user_id"; // int(11)
-	public static final String NAME = "user_name"; // varchar(20) 用户名
-	public static final String TELEPHONE = "user_telephone"; // varchar(11) 电话
-	public static final String PASSWORD = "user_password"; // varchar(20) 密码
-	public static final String SEX = "user_sex";// char(4) 性别
-	public static final String HEAD_IMAGE = "user_head_image"; // varchar(100)
-																// 头像
+	// 此处定义的是JsonObect中的key
+	public static final String ID = "id"; // int(11)
+	public static final String NAME = "name"; // varchar(20) 用户名
+	public static final String TELEPHONE = "telephone"; // varchar(11) 电话
+	public static final String PASSWORD = "password"; // varchar(20) 密码
+	public static final String SEX = "sex";// char(4) 性别
+	public static final String HEAD_IMAGE = "headimage"; // varchar(100)
+															// 头像
 	int id; // int(11)
 	String name;// varchar(20) 用户名
 	String telephone;// varchar(20) 电话
