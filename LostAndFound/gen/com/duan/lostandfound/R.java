@@ -224,12 +224,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int relative_personal_safety_password=0x7f06002d;
         public static final int relative_register=0x7f060007;
         public static final int relativelayout_fristRadioGroup_back=0x7f06000e;
-        public static final int tv_about_industry=0x7f06002c;
         public static final int tv_login_title=0x7f060006;
         public static final int tv_main_personal_about_name=0x7f060028;
         public static final int tv_main_title=0x7f06000d;
         public static final int tv_modify_title=0x7f060016;
         public static final int tv_personal_about_head=0x7f060025;
+        public static final int tv_personal_about_sex=0x7f06002c;
         public static final int tv_personal_about_telephone=0x7f06002a;
         public static final int tv_regist=0x7f06000b;
         public static final int tv_safety_password=0x7f06002e;

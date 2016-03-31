@@ -248,8 +248,10 @@ public class LoginActivity extends Activity {
 			if (alaysisResponse.getUsersInfo() != null) {
 				currentUsers = alaysisResponse.getUsersInfo();
 				username = currentUsers.getName();
-				// usersex = currentUsers.getSex();
-
+				userid = currentUsers.getId();
+				usersex = currentUsers.getSex();
+				System.out.println("Login.username,userid,usersex--->"
+						+ username + "," + userid + "," + usersex);
 				// 登录时,将用户ID存储到共享参数中
 				SharedPreferences pref = getSharedPreferences(
 						FinalData.CONFIG_FILE_NAME, MODE_PRIVATE);
@@ -258,7 +260,7 @@ public class LoginActivity extends Activity {
 				editor.putString("telephone", telephone);
 				editor.putString("password", password);
 				editor.putString("name", username);
-				// editor.putString("sex", usersex);
+				editor.putString("sex", usersex);
 
 				editor.commit(); // 提交
 				System.out.println("---Duan:telephone--password--->"

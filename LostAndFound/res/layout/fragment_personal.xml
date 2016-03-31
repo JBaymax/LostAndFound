@@ -188,7 +188,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tv_about_industry"
+                    android:id="@+id/tv_personal_about_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"

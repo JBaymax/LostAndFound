@@ -63,6 +63,7 @@ public class AnalysisGetUsersInfoResponseParam extends ResponseParam {
 				users.setName(jsonObject.getString(Users.NAME));
 				users.setTelephone(jsonObject.getString(Users.TELEPHONE));
 				users.setPassword((jsonObject.getString(Users.PASSWORD)));
+				users.setSex(jsonObject.getString(Users.SEX));
 
 			}
 

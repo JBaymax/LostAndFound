@@ -1,10 +1,18 @@
 package com.duan.lostandfound.fragment;
 
+import org.json.JSONObject;
+
 import com.duan.lostandfound.R;
 import com.duan.lostandfound.activity.ModifyNameActivity;
 import com.duan.lostandfound.activity.ModifyPasswordActivity;
 import com.duan.lostandfound.activity.ModifyTelephoneActivity;
+import com.duan.lostandfound.activity.ModifyNameActivity.ModifyNameMyAsyncTask;
+import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
+import com.duan.lostandfound.dto.Users;
 import com.duan.lostandfound.finaldata.FinalData;
+import com.duan.lostandfound.finaldata.HttpClient;
+import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.param.RequestParam;
 import com.duan.lostandfound.utils.ActionSheet;
 import com.duan.lostandfound.utils.ActionSheet.MenuItemClickListener;
 import com.duan.lostandfound.utils.IntentCode;
@@ -16,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -41,6 +50,7 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 	private TextView nameTextView;
 	private TextView telephoneTextView;
+	private TextView sexTextView;
 
 	String telephone;
 	String phone;
@@ -49,6 +59,9 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 	String password;
 
 	String name;
+	String sex;
+	int userId;
+	Users currentUsers = null; //
 
 	/**
 	 * 获取整个布局
@@ -78,6 +91,7 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 				.findViewById(R.id.tv_main_personal_about_name);
 		telephoneTextView = (TextView) view
 				.findViewById(R.id.tv_personal_about_telephone);
+		sexTextView = (TextView) view.findViewById(R.id.tv_personal_about_sex);
 		buttonExit = (Button) view.findViewById(R.id.btn_setting_quit);
 
 	}
@@ -100,6 +114,7 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 				FinalData.CONFIG_FILE_NAME, Activity.MODE_PRIVATE);
 		name = preferences.getString("name", "0");// 读取到昵称
 		phone = preferences.getString("telephone", "0");// 读取到的手机号
+		sex = preferences.getString("sex", "男");
 		System.out.println("读取手机号和名字--->" + name + phone);
 		A = phone.substring(0, 3);// 前三位数
 		B = phone.substring(phone.length() - 4, phone.length());// 后四位数
@@ -107,6 +122,7 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 		telephoneTextView.setText(telephone);
 		nameTextView.setText(name);
+		sexTextView.setText(sex);
 	}
 
 	/**
@@ -151,11 +167,110 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 
 	public void showActionSheet() {
 		ActionSheet menuView = new ActionSheet(getActivity());
-		menuView.setCancelButtonTitle("cancel");// before add items
-		menuView.addItems("Item1", "Item2", "Item3", "Item4");
+		menuView.setCancelButtonTitle("取消");// before add items
+		menuView.addItems("请选择性别", "男", "女");
 		menuView.setItemClickListener(this);
 		menuView.setCancelableOnTouchMenuOutside(true);
 		menuView.showMenu();
+
+	}
+
+	@Override
+	public void onItemClick(int itemPosition) {
+		SharedPreferences pref = getActivity().getSharedPreferences(
+				FinalData.CONFIG_FILE_NAME, Activity.MODE_PRIVATE);
+		Editor editor = pref.edit();
+		userId = pref.getInt("id", 1234567890);
+		RequestParam requestParams = new RequestParam();
+		requestParams.setRequestType(RequestParam.MODIFYSEX);
+		if (itemPosition == 1) {
+			sexTextView.setText("男");
+			sex = sexTextView.getText().toString();
+			editor.putString("sex", sex);
+			System.out.println("点击-男--->" + sex);
+			editor.commit(); // 提交
+
+		} else if (itemPosition == 2) {
+			sexTextView.setText("女");
+			sex = sexTextView.getText().toString();
+			editor.putString("sex", sex);
+			editor.commit(); // 提交
+			System.out.println("点击-女--->" + sex);
+		}
+		// 传输过去的数据
+		try {
+			JSONObject[] params = new JSONObject[1];
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("id", userId);
+			jsonObject.put("sex", sex);
+			params[0] = jsonObject;
+			requestParams.setParams(params);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		new ModifySexMyAsyncTask().execute(requestParams);
+
+	}
+
+	/**
+	 * 改变昵称的异步通信任务
+	 */
+	public class ModifySexMyAsyncTask extends
+			AsyncTask<RequestParam, Integer, Integer> {
+
+		@Override
+		protected Integer doInBackground(RequestParam... params) {
+			RequestParam requestParams = params[0];
+
+			System.out
+					.println("---Duan:GetUsersInfoAsyncTask.doInBackground.requestParams--->"
+							+ requestParams.getJSON());
+			if (!HttpClient.isConnect(getActivity())) {
+				System.out
+						.println("---Duan:GetUsersInfoAsyncTask.doInBackground.!HttpClient.isConnect(getActivity())--->");
+				return -1; // 表示请求失败
+			}
+			String response = Request.request(requestParams.getJSON());
+			System.out
+					.println("----Duan:GetUsersInfoAsyncTask.doInBackground.response--->"
+							+ response);
+			System.out
+					.println("----Duan:GetUsersInfoAsyncTask.doInBackground.response2--->"
+							+ Request.request(requestParams.getJSON()));
+			AnalysisGetUsersInfoResponseParam alaysisResponse = new AnalysisGetUsersInfoResponseParam(
+					response);
+			if (alaysisResponse.getResult() != 0) {
+				return alaysisResponse.getResult();
+			}
+			System.out
+					.println("----Duan:GetUsersInfoAsyncTask.doInBackground.alaysisResponse.getCourseVideoInfo() --->"
+							+ alaysisResponse.getUsersInfo());
+			if (alaysisResponse.getUsersInfo() != null) {
+				currentUsers = alaysisResponse.getUsersInfo();
+
+				System.out.println("---Duan:currentUsers--->" + currentUsers);
+				return 0;
+			}
+
+			return -1;
+		}
+
+		@Override
+		protected void onPostExecute(Integer result) {
+			super.onPostExecute(result);
+			switch (result) {
+			case 0:
+				Toast.makeText(getActivity(), "修改成功！", Toast.LENGTH_LONG)
+						.show();
+
+				break;
+			case -1:
+				Toast.makeText(getActivity(), "修改失败！", Toast.LENGTH_LONG)
+						.show();
+				break;
+			}
+
+		}
 	}
 
 	@Override
@@ -176,8 +291,9 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 			break;
 		case R.id.relative_personal_about_sex:
 			getActivity().setTheme(R.style.ActionSheetStyle);
-			System.out.println("性别--->");
 			showActionSheet();
+
+			System.out.println("性别--->");
 			break;
 		case R.id.relative_personal_safety_password:
 			Intent passwordIntent = new Intent(getActivity(),
@@ -191,13 +307,6 @@ public class FragmentPersonal extends Fragment implements OnClickListener,
 		default:
 			break;
 		}
-
-	}
-
-	@Override
-	public void onItemClick(int itemPosition) {
-
-		Toast.makeText(getActivity(), (itemPosition + 1) + " click", 0).show();
 
 	}
 
