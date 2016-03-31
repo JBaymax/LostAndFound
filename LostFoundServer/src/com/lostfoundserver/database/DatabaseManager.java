@@ -10,7 +10,7 @@ public class DatabaseManager {
 	// MySql数据库连接驱动
 	private String driverClass = "com.mysql.jdbc.Driver";
 	// 连接数据库的url
-	private String jdbcUrl = "jdbc:mysql://localhost:3306/db_lost";
+	private String jdbcUrl = "jdbc:mysql://localhost:3306/db_lost?useUnicode=true&characterEncoding=utf-8";
 	// 连接数据库的用户名及密码
 
 	private String user = "root";

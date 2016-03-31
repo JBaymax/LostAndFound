@@ -12,5 +12,6 @@ public class RequestTypeCode {
 	public static final String MODIFYNAME = "ModifyName"; // 修改昵称
 	public static final String MODIFYTELEPHONE = "ModifyTelephone"; // 修改手机号
 	public static final String MODIFYPASSWORD = "ModifyPassword"; // 修改密码
+	public static final String MODIFYSEX = "ModifySex"; // 修改性别
 	
 }
