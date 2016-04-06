@@ -41,6 +41,8 @@
         <activity android:name="com.duan.lostandfound.activity.ModifyNameActivity" />
         <activity android:name="com.duan.lostandfound.activity.ModifyTelephoneActivity" />
         <activity android:name="com.duan.lostandfound.activity.ModifyPasswordActivity" />
+        <activity android:name="com.duan.lostandfound.activity.AddLostActivity" />
+        <activity android:name="com.duan.lostandfound.activity.AddFoundActivity" />
         <!-- 短信验证的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"

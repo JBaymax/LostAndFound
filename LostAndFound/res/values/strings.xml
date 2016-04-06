@@ -37,5 +37,12 @@
     <string name="regist_set_submit">提交</string>
     <!-- 个人信息修改 -->
     <string name="modify_submit">提交</string>
+    <!-- 失物招领界面 -->
+    <string name="progress_loading">正在获取数据..</string>
+    <string name="list_no_data_lost">暂时还未有失物信息</string>
+    <string name="add_title_hint">标题</string>
+    <string name="add_telephone_hint">手机</string>
+    <string name="add_content_hint">内容</string>
+    <string name="add_submit">完成</string>
 
 </resources>

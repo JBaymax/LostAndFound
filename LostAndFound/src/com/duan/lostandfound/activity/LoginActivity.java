@@ -5,14 +5,6 @@ import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
-import com.duan.lostandfound.dto.Users;
-import com.duan.lostandfound.finaldata.FinalData;
-import com.duan.lostandfound.finaldata.HttpClient;
-import com.duan.lostandfound.finaldata.Request;
-import com.duan.lostandfound.param.RequestParam;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,6 +20,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
+import com.duan.lostandfound.dto.Users;
+import com.duan.lostandfound.finaldata.FinalData;
+import com.duan.lostandfound.finaldata.HttpClient;
+import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.param.RequestParam;
 
 /**
  * 登录:传输昵称和密码

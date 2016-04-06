@@ -5,14 +5,6 @@ import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
-import com.duan.lostandfound.dto.Users;
-import com.duan.lostandfound.finaldata.FinalData;
-import com.duan.lostandfound.finaldata.HttpClient;
-import com.duan.lostandfound.finaldata.Request;
-import com.duan.lostandfound.param.RequestParam;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -20,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -30,6 +21,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
+import com.duan.lostandfound.dto.Users;
+import com.duan.lostandfound.finaldata.FinalData;
+import com.duan.lostandfound.finaldata.HttpClient;
+import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.param.RequestParam;
 
 /**
  * 此类是修改密码

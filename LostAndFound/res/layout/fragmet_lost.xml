@@ -4,4 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" >
+
+        <ListView
+            android:id="@+id/list_lost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+
+        <include layout="@layout/include_no_data" />
+
+        <include layout="@layout/include_progress" />
+    </RelativeLayout>
+
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.lostfoundserver.dto;
 public class Lost {
 	public static final String LOST_ID = "lost_id";
 	public static final String USER_ID = "user_id";
+	public static final String USER_TELEPHONE = "user_telephone";
 	public static final String LOST_TITLE = "lost_title";
 	public static final String LOST_CONTENT = "lost_content";
 	public static final String LOST_TIME = "lost_time";
@@ -10,6 +11,7 @@ public class Lost {
 
 	private int lostid;
 	private int userid;
+	private String usertelephone;
 	private String losttitle;
 	private String lostcontent;
 	private String losttime;
@@ -19,10 +21,20 @@ public class Lost {
 		super();
 	}
 
-	public Lost(int lostid, int userid, String losttitle, String lostcontent, String losttime, String lostimage) {
+	public String getUsertelephone() {
+		return usertelephone;
+	}
+
+	public void setUsertelephone(String usertelephone) {
+		this.usertelephone = usertelephone;
+	}
+
+	public Lost(int lostid, int userid, String usertelephone, String losttitle, String lostcontent, String losttime,
+			String lostimage) {
 		super();
 		this.lostid = lostid;
 		this.userid = userid;
+		this.usertelephone = usertelephone;
 		this.losttitle = losttitle;
 		this.lostcontent = lostcontent;
 		this.losttime = losttime;
@@ -79,8 +91,9 @@ public class Lost {
 
 	@Override
 	public String toString() {
-		return "Lost [lostid=" + lostid + ", userid=" + userid + ", losttitle=" + losttitle + ", lostcontent="
-				+ lostcontent + ", losttime=" + losttime + ", lostimage=" + lostimage + "]";
+		return "Lost [lostid=" + lostid + ", userid=" + userid + ", usertelephone=" + usertelephone + ", losttitle="
+				+ losttitle + ", lostcontent=" + lostcontent + ", losttime=" + losttime + ", lostimage=" + lostimage
+				+ "]";
 	}
 
 }

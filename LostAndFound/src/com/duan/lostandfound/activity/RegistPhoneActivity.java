@@ -1,14 +1,10 @@
 package com.duan.lostandfound.activity;
 
+import static cn.smssdk.framework.utils.R.getStringRes;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.utils.MyCountTimer;
-
-import static cn.smssdk.framework.utils.R.getStringRes;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +18,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.utils.MyCountTimer;
 
 /**
  * 注册

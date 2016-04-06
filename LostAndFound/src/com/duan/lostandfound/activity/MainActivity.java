@@ -3,12 +3,7 @@ package com.duan.lostandfound.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.adapter.MainPageAdapter;
-import com.duan.lostandfound.fragment.FragmentFound;
-import com.duan.lostandfound.fragment.FragmentLost;
-import com.duan.lostandfound.fragment.FragmentPersonal;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -16,12 +11,19 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.adapter.MainPageAdapter;
+import com.duan.lostandfound.fragment.FragmentFound;
+import com.duan.lostandfound.fragment.FragmentLost;
+import com.duan.lostandfound.fragment.FragmentPersonal;
 
 /**
  * FragmentActivity of Activity
@@ -55,7 +57,15 @@ public class MainActivity extends FragmentActivity implements
 		mainTitleTextView.setText("失物招领");
 		addSelectorImageView = (ImageView) findViewById(R.id.iv_main_add_selector);
 		addSelectorImageView.setVisibility(View.VISIBLE);
+		addSelectorImageView.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View arg0) {
+				Intent lostIntent = new Intent(MainActivity.this,
+						AddLostActivity.class);
+				startActivity(lostIntent);
+			}
+		});
 		fragments = new ArrayList<Fragment>();
 		fragments.add(new FragmentLost());
 		fragments.add(new FragmentFound());
@@ -99,11 +109,31 @@ public class MainActivity extends FragmentActivity implements
 			pager.setCurrentItem(0);
 			mainTitleTextView.setText("失物招领");
 			addSelectorImageView.setVisibility(View.VISIBLE);
+			addSelectorImageView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+					Intent lostIntent = new Intent(MainActivity.this,
+							AddLostActivity.class);
+					startActivity(lostIntent);
+
+				}
+			});
 			break;
 		case R.id.radio1:
 			pager.setCurrentItem(1);
 			mainTitleTextView.setText("寻物启事");
 			addSelectorImageView.setVisibility(View.VISIBLE);
+			addSelectorImageView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+					Intent foundIntent = new Intent(MainActivity.this,
+							AddFoundActivity.class);
+					startActivity(foundIntent);
+
+				}
+			});
 			break;
 		case R.id.radio2:
 			pager.setCurrentItem(2);

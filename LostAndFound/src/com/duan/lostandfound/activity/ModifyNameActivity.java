@@ -5,16 +5,6 @@ import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
-import com.duan.lostandfound.dto.Users;
-import com.duan.lostandfound.finaldata.FinalData;
-import com.duan.lostandfound.finaldata.HttpClient;
-import com.duan.lostandfound.finaldata.Request;
-import com.duan.lostandfound.fragment.FragmentPersonal;
-import com.duan.lostandfound.param.RequestParam;
-import com.duan.lostandfound.utils.IntentCode;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,6 +21,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
+import com.duan.lostandfound.dto.Users;
+import com.duan.lostandfound.finaldata.FinalData;
+import com.duan.lostandfound.finaldata.HttpClient;
+import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.fragment.FragmentPersonal;
+import com.duan.lostandfound.param.RequestParam;
+import com.duan.lostandfound.utils.IntentCode;
 
 /**
  * 此类是修改昵称

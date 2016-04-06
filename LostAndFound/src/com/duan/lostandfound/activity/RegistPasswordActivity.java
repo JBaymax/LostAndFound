@@ -5,12 +5,6 @@ import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 
-import com.duan.lostandfound.R;
-import com.duan.lostandfound.analysis.AnalysisGetRegisterInfoResponseParam;
-import com.duan.lostandfound.finaldata.HttpClient;
-import com.duan.lostandfound.finaldata.Request;
-import com.duan.lostandfound.param.RequestParam;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,6 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.duan.lostandfound.R;
+import com.duan.lostandfound.analysis.AnalysisGetRegisterInfoResponseParam;
+import com.duan.lostandfound.finaldata.HttpClient;
+import com.duan.lostandfound.finaldata.Request;
+import com.duan.lostandfound.param.RequestParam;
 
 /**
  * 设置昵称/密码

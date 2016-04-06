@@ -14,7 +14,7 @@ public class FinalData {
 	// public static final String IP_ADDRESS = "114.214.170.137";// 办公室台式机
 
 	// 端口号
-	public static final int PORT = 8181;// 笔记本
+	public static final int PORT = 8383;// 笔记本
 	// public static final int PORT = 8383;//台式机
 	public static final String FILE = "/LostFoundServer/ServletFactory";
 }
