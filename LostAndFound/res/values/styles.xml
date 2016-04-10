@@ -2,19 +2,40 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Smile">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Smile.TextView">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Smile.TextView._White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Smile.TextView._Gray">
+        <item name="android:textColor">@color/base_color_text_gray</item>
+    </style>
+
+    <style name="Smile.TextView._Black">
+        <item name="android:textColor">@color/base_color_text_black</item>
     </style>
 
 </resources>

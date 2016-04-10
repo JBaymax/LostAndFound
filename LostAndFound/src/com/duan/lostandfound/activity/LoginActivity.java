@@ -250,6 +250,7 @@ public class LoginActivity extends Activity {
 				username = currentUsers.getName();
 				userid = currentUsers.getId();
 				usersex = currentUsers.getSex();
+				System.out.println("Login.currentUsers--->" + currentUsers);
 				System.out.println("Login.username,userid,usersex--->"
 						+ username + "," + userid + "," + usersex);
 				// 登录时,将用户ID存储到共享参数中

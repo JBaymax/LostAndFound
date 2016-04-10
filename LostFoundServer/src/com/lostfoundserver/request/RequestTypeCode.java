@@ -15,5 +15,6 @@ public class RequestTypeCode {
 	public static final String MODIFYSEX = "ModifySex"; // 修改性别
 	public static final String ADDFOUND = "AddFound"; // 增加寻物启事
 	public static final String ADDLOST = "AddLost"; // 增加失物招领
-
+	public static final String GETLOST = "GetLost"; // 获取失物招领
+	public static final String GETFOUND = "GetFound"; // 获取寻物启事
 }

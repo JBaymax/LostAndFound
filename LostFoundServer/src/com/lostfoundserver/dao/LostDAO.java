@@ -3,6 +3,8 @@ package com.lostfoundserver.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.lostfoundserver.dto.Lost;
 
@@ -67,10 +69,11 @@ public class LostDAO extends BaseDAO {
 		boolean result = false;
 		try {
 			ps = conn.prepareStatement(
-					"insert into tb_lost(user_id,user_telephone,lost_title,lost_content,lost_time) values(?,?,?,?,?)");
+					"insert into tb_lost(user_id,user_name,user_telephone,lost_title,lost_content,lost_time) values(?,?,?,?,?,?)");
 
 			int i = 1;
 			ps.setInt(i++, lost.getUserid());
+			ps.setString(i++, lost.getUsername());
 			ps.setString(i++, lost.getUsertelephone());
 			ps.setString(i++, lost.getLosttitle());
 			ps.setString(i++, lost.getLostcontent());
@@ -86,5 +89,45 @@ public class LostDAO extends BaseDAO {
 			closeStatement(ps);
 		}
 		return result;
+	}
+
+	/**
+	 * 查询所有的失物招领信息
+	 * 
+	 * @return
+	 */
+	public List<Lost> getLosts() {
+		List<Lost> losts = null;
+
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+
+			ps = conn.prepareStatement("select * from tb_lost order by lost_id DESC");
+
+			rs = ps.executeQuery();
+			if (rs != null) {
+				losts = new ArrayList<Lost>();
+				Lost lost = null;
+				while (rs.next()) {
+					lost = new Lost();
+					lost.setUserid(rs.getInt("user_id"));
+					lost.setLostid(rs.getInt("lost_id"));
+					lost.setUsername(rs.getString("user_name"));
+					lost.setLosttitle(rs.getString("lost_title"));
+					lost.setLostcontent(rs.getString("lost_content"));
+					lost.setUsertelephone(rs.getString("user_telephone"));
+					lost.setLosttime(rs.getString("lost_time"));
+
+					losts.add(lost);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeStatement(ps);
+			closeResultSet(rs);
+		}
+		return losts;
 	}
 }

@@ -6,7 +6,6 @@ import com.duan.lostandfound.R;
 import com.duan.lostandfound.activity.ModifyNameActivity;
 import com.duan.lostandfound.activity.ModifyPasswordActivity;
 import com.duan.lostandfound.activity.ModifyTelephoneActivity;
-import com.duan.lostandfound.activity.ModifyNameActivity.ModifyNameMyAsyncTask;
 import com.duan.lostandfound.analysis.AnalysisGetUsersInfoResponseParam;
 import com.duan.lostandfound.dto.Users;
 import com.duan.lostandfound.finaldata.FinalData;

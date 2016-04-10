@@ -15,9 +15,11 @@
             android:layout_height="match_parent" >
         </ListView>
 
+        <!--
         <include layout="@layout/include_no_data" />
 
         <include layout="@layout/include_progress" />
+        -->
     </RelativeLayout>
 
 </LinearLayout>

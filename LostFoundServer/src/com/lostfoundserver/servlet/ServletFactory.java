@@ -46,7 +46,7 @@ public class ServletFactory extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 得打http:~:端口号/LostFoundServer/ServletFactory/requestParam
+		// 得到http:~:端口号/LostFoundServer/ServletFactory/requestParam
 		String json = request.getParameter("requestParam");
 		System.out.println("LostAndFound接收到客户端请求：requestParam = " + json);
 

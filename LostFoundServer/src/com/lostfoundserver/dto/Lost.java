@@ -3,6 +3,7 @@ package com.lostfoundserver.dto;
 public class Lost {
 	public static final String LOST_ID = "lost_id";
 	public static final String USER_ID = "user_id";
+	public static final String USER_NAME = "user_name";
 	public static final String USER_TELEPHONE = "user_telephone";
 	public static final String LOST_TITLE = "lost_title";
 	public static final String LOST_CONTENT = "lost_content";
@@ -11,6 +12,7 @@ public class Lost {
 
 	private int lostid;
 	private int userid;
+	private String username;
 	private String usertelephone;
 	private String losttitle;
 	private String lostcontent;
@@ -21,24 +23,33 @@ public class Lost {
 		super();
 	}
 
+	public Lost(int lostid, int userid, String username, String usertelephone, String losttitle, String lostcontent,
+			String losttime, String lostimage) {
+		super();
+		this.lostid = lostid;
+		this.userid = userid;
+		this.username = username;
+		this.usertelephone = usertelephone;
+		this.losttitle = losttitle;
+		this.lostcontent = lostcontent;
+		this.losttime = losttime;
+		this.lostimage = lostimage;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public String getUsertelephone() {
 		return usertelephone;
 	}
 
 	public void setUsertelephone(String usertelephone) {
 		this.usertelephone = usertelephone;
-	}
-
-	public Lost(int lostid, int userid, String usertelephone, String losttitle, String lostcontent, String losttime,
-			String lostimage) {
-		super();
-		this.lostid = lostid;
-		this.userid = userid;
-		this.usertelephone = usertelephone;
-		this.losttitle = losttitle;
-		this.lostcontent = lostcontent;
-		this.losttime = losttime;
-		this.lostimage = lostimage;
 	}
 
 	public int getLostid() {
@@ -91,9 +102,9 @@ public class Lost {
 
 	@Override
 	public String toString() {
-		return "Lost [lostid=" + lostid + ", userid=" + userid + ", usertelephone=" + usertelephone + ", losttitle="
-				+ losttitle + ", lostcontent=" + lostcontent + ", losttime=" + losttime + ", lostimage=" + lostimage
-				+ "]";
+		return "Lost [lostid=" + lostid + ", userid=" + userid + ", username=" + username + ", usertelephone="
+				+ usertelephone + ", losttitle=" + losttitle + ", lostcontent=" + lostcontent + ", losttime=" + losttime
+				+ ", lostimage=" + lostimage + "]";
 	}
 
 }

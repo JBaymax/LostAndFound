@@ -38,6 +38,7 @@ public class AddLostActivity extends Activity implements OnClickListener {
 	private Button submitButton;// 完成
 
 	int userId;// 用户ID
+	String name;// 用户名
 	String telephone;// 手机号
 	String title;// 标题
 	String content;// 内容
@@ -113,8 +114,8 @@ public class AddLostActivity extends Activity implements OnClickListener {
 				FinalData.CONFIG_FILE_NAME, MODE_PRIVATE);
 		Editor editor = pref.edit();
 		userId = pref.getInt("id", 1234567890);
-
-		System.out.println("Duan:userId--->" + userId);
+		name = pref.getString("name", "段雪庆");
+		System.out.println("Duan:userId.name--->" + userId + "," + name);
 
 		editor.commit(); // 提交
 		title = titleEditText.getText().toString();// 获取标题
@@ -129,6 +130,7 @@ public class AddLostActivity extends Activity implements OnClickListener {
 					JSONObject[] params = new JSONObject[1];
 					JSONObject jsonObject = new JSONObject();
 					jsonObject.put("id", userId);
+					jsonObject.put("name", name);
 					jsonObject.put("title", title);
 					jsonObject.put("telephone", telephone);
 					jsonObject.put("content", content);

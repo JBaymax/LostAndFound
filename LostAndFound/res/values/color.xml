@@ -45,5 +45,8 @@
     <color name="transparent">#00000000</color>
     <!-- 进度条 -->
     <color name="text_gray">#969696</color>
+    <color name="green">#5cbe6c</color>
+    <color name="base_color_text_black">#3e3e39</color>
+    <color name="base_color_text_gray">#898989</color>
 
 </resources>

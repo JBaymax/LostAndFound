@@ -3,6 +3,8 @@ package com.lostfoundserver.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.lostfoundserver.dto.Found;
 
@@ -67,10 +69,11 @@ public class FoundDAO extends BaseDAO {
 		boolean result = false;
 		try {
 			ps = conn.prepareStatement(
-					"insert into tb_found(user_id,user_telephone,found_title,found_content,found_time) values(?,?,?,?,?)");
+					"insert into tb_found(user_id,user_name,user_telephone,found_title,found_content,found_time) values(?,?,?,?,?,?)");
 
 			int i = 1;
 			ps.setInt(i++, found.getUserid());
+			ps.setString(i++, found.getUsername());
 			ps.setString(i++, found.getUsertelephone());
 			ps.setString(i++, found.getFoundtitle());
 			ps.setString(i++, found.getFoundcontent());
@@ -86,5 +89,45 @@ public class FoundDAO extends BaseDAO {
 			closeStatement(ps);
 		}
 		return result;
+	}
+
+	/**
+	 * 查询所有的寻物启事信息
+	 * 
+	 * @return
+	 */
+	public List<Found> getFounds() {
+		List<Found> founds = null;
+
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+
+			ps = conn.prepareStatement("select * from tb_found order by found_id DESC");
+
+			rs = ps.executeQuery();
+			if (rs != null) {
+				founds = new ArrayList<Found>();
+				Found found = null;
+				while (rs.next()) {
+					found = new Found();
+					found.setUserid(rs.getInt("user_id"));
+					found.setFoundid(rs.getInt("found_id"));
+					found.setUsername(rs.getString("user_name"));
+					found.setFoundtitle(rs.getString("found_title"));
+					found.setFoundcontent(rs.getString("found_content"));
+					found.setUsertelephone(rs.getString("user_telephone"));
+					found.setFoundtime(rs.getString("found_time"));
+
+					founds.add(found);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeStatement(ps);
+			closeResultSet(rs);
+		}
+		return founds;
 	}
 }

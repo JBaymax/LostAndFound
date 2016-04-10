@@ -94,6 +94,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  app主题颜色 
          */
         public static final int app_theme=0x7f040001;
+        public static final int base_color_text_black=0x7f040013;
+        public static final int base_color_text_gray=0x7f040014;
         /**  黑色 
          */
         public static final int black=0x7f040007;
@@ -104,10 +106,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int croci=0x7f040003;
         public static final int gold=0x7f04000f;
+        public static final int green=0x7f040012;
         /**  圆型图像的颜色 
          */
         public static final int light=0x7f040006;
-        public static final int main_bottom_tab_color=0x7f040012;
+        public static final int main_bottom_tab_color=0x7f040015;
         /**  默认下方文字 
          */
         public static final int main_default_str=0x7f040002;
@@ -180,22 +183,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int head=0x7f020019;
         public static final int ic_launcher=0x7f02001a;
         public static final int icon=0x7f02001b;
-        public static final int main_bottom_tab=0x7f02001c;
-        public static final int main_bottom_tab_line=0x7f02001d;
-        public static final int next=0x7f02001e;
-        public static final int regist_shape_bg=0x7f02001f;
-        public static final int return_icon=0x7f020020;
-        public static final int welcome=0x7f020021;
+        public static final int icon_photo=0x7f02001c;
+        public static final int main_bottom_tab=0x7f02001d;
+        public static final int main_bottom_tab_line=0x7f02001e;
+        public static final int next=0x7f02001f;
+        public static final int regist_shape_bg=0x7f020020;
+        public static final int return_icon=0x7f020021;
+        public static final int welcome=0x7f020022;
     }
     public static final class id {
-        public static final int action_settings=0x7f06003a;
+        public static final int action_settings=0x7f060047;
         public static final int btn_add_submit=0x7f06000a;
         public static final int btn_login=0x7f060010;
         public static final int btn_modify_submit=0x7f06001e;
         public static final int btn_regist_get_verify_code=0x7f060028;
         public static final int btn_regist_next_step=0x7f060029;
         public static final int btn_regist_set_password_submit=0x7f060022;
-        public static final int btn_setting_quit=0x7f060035;
+        public static final int btn_setting_quit=0x7f060037;
         public static final int et_add_content=0x7f060009;
         public static final int et_add_telephone=0x7f060008;
         public static final int et_add_title=0x7f060007;
@@ -212,40 +216,53 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int iv_main_personal_about_sex=0x7f060003;
         public static final int iv_main_personal_safety_password=0x7f060004;
         public static final int iv_modify_back=0x7f06001b;
-        public static final int iv_personal_about_head=0x7f06002c;
+        public static final int iv_personal_about_head=0x7f06002e;
         public static final int iv_personal_about_head_next=0x7f060000;
         public static final int iv_personal_about_telephone_next=0x7f060002;
         public static final int iv_regist_name_title_back=0x7f06001f;
         public static final int iv_regist_title_back=0x7f060023;
-        public static final int layout_no=0x7f060037;
+        public static final int layout_no=0x7f060038;
+        public static final int linear_item_found_title=0x7f06003b;
+        public static final int linear_item_lost_title=0x7f060041;
         public static final int linear_register=0x7f060025;
-        public static final int list_lost=0x7f060036;
+        public static final int list_found=0x7f06002a;
+        public static final int list_lost=0x7f06002b;
         public static final int login_titlebar=0x7f06000b;
         public static final int lost_found_main_titlebar=0x7f060012;
         public static final int pager=0x7f060016;
-        public static final int progress=0x7f060039;
+        public static final int progress=0x7f06003a;
         public static final int radio0=0x7f060018;
         public static final int radio1=0x7f060019;
         public static final int radio2=0x7f06001a;
         public static final int radioGroup1=0x7f060017;
-        public static final int relative_personal_about_head=0x7f06002a;
-        public static final int relative_personal_about_name=0x7f06002d;
-        public static final int relative_personal_about_sex=0x7f060031;
-        public static final int relative_personal_about_telephone=0x7f06002f;
-        public static final int relative_personal_safety_password=0x7f060033;
+        public static final int relative_personal_about_head=0x7f06002c;
+        public static final int relative_personal_about_name=0x7f06002f;
+        public static final int relative_personal_about_sex=0x7f060033;
+        public static final int relative_personal_about_telephone=0x7f060031;
+        public static final int relative_personal_safety_password=0x7f060035;
         public static final int relative_register=0x7f06000d;
         public static final int relativelayout_fristRadioGroup_back=0x7f060014;
         public static final int tv_add_title=0x7f060006;
+        public static final int tv_item_found_content=0x7f06003e;
+        public static final int tv_item_found_name=0x7f06003c;
+        public static final int tv_item_found_telephone=0x7f060040;
+        public static final int tv_item_found_time=0x7f06003f;
+        public static final int tv_item_found_title=0x7f06003d;
+        public static final int tv_item_lost_content=0x7f060044;
+        public static final int tv_item_lost_name=0x7f060042;
+        public static final int tv_item_lost_telephone=0x7f060046;
+        public static final int tv_item_lost_time=0x7f060045;
+        public static final int tv_item_lost_title=0x7f060043;
         public static final int tv_login_title=0x7f06000c;
-        public static final int tv_main_personal_about_name=0x7f06002e;
+        public static final int tv_main_personal_about_name=0x7f060030;
         public static final int tv_main_title=0x7f060013;
         public static final int tv_modify_title=0x7f06001c;
-        public static final int tv_no=0x7f060038;
-        public static final int tv_personal_about_head=0x7f06002b;
-        public static final int tv_personal_about_sex=0x7f060032;
-        public static final int tv_personal_about_telephone=0x7f060030;
+        public static final int tv_no=0x7f060039;
+        public static final int tv_personal_about_head=0x7f06002d;
+        public static final int tv_personal_about_sex=0x7f060034;
+        public static final int tv_personal_about_telephone=0x7f060032;
         public static final int tv_regist=0x7f060011;
-        public static final int tv_safety_password=0x7f060034;
+        public static final int tv_safety_password=0x7f060036;
         public static final int tv_show_register_info=0x7f060024;
     }
     public static final class layout {
@@ -257,10 +274,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_regist_phone_verifycode=0x7f030005;
         public static final int activity_welcome=0x7f030006;
         public static final int fragment_found=0x7f030007;
-        public static final int fragment_personal=0x7f030008;
-        public static final int fragmet_lost=0x7f030009;
+        public static final int fragment_lost=0x7f030008;
+        public static final int fragment_personal=0x7f030009;
         public static final int include_no_data=0x7f03000a;
         public static final int include_progress=0x7f03000b;
+        public static final int item_found_list=0x7f03000c;
+        public static final int item_lost_list=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -316,15 +335,29 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int regist_verify_code=0x7f070017;
     }
     public static final class style {
-        public static final int ActionSheetStyle=0x7f080002;
+        public static final int ActionSheetStyle=0x7f080007;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+
+
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
+
+
+
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -343,6 +376,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int Smile=0x7f080002;
+        public static final int Smile_TextView=0x7f080003;
+        public static final int Smile_TextView__Black=0x7f080006;
+        public static final int Smile_TextView__Gray=0x7f080005;
+        public static final int Smile_TextView__White=0x7f080004;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionSheet.

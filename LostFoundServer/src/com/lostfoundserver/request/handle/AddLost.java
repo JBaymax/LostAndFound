@@ -12,6 +12,7 @@ public class AddLost implements HandleRequest {
 	@Override
 	public int handleRequest(JSONArray params) {
 		int id = params.getJSONObject(0).getInt("id");
+		String name = params.getJSONObject(0).getString("name");
 		String title = params.getJSONObject(0).getString("title");
 		String telephone = params.getJSONObject(0).getString("telephone");
 		String content = params.getJSONObject(0).getString("content");
@@ -19,7 +20,7 @@ public class AddLost implements HandleRequest {
 		LostService lostService = LostService.getInstance();
 		if (!lostService.lostIsExist(telephone, title, content)) {
 
-			responseContent = lostService.AddLost(id, telephone, title, content,
+			responseContent = lostService.AddLost(id, name, telephone, title, content,
 					Long.toString(System.currentTimeMillis()));
 			if (responseContent != null) {
 				return 0;

@@ -22,13 +22,15 @@ public class RequestParam {
 	public static final String MODIFYNAME = "ModifyName"; // 修改昵称的请求
 
 	public static final String MODIFYTELEPHONE = "ModifyTelephone"; // 修改昵称的请求
-	
+
 	public static final String MODIFYPASSWORD = "ModifyPassword"; // 修改昵称的请求
-	
+
 	public static final String MODIFYSEX = "ModifySex"; // 修改性别的请求
-	
+
 	public static final String ADDLOST = "AddLost"; // 增加失物招领信息
 	public static final String ADDFOUND = "AddFound"; // 增加失物招领信息
+	public static final String GETLOST = "GetLost"; // 增加失物招领信息
+	public static final String GETFOUND = "GetFound"; // 增加失物招领信息
 	// 请求参数名
 	public static final String TELEPHONE = "telephone";
 	public static final String TOKEN = "token";
